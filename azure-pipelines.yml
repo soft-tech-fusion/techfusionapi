@@ -15,7 +15,7 @@ variables:
   imageRepository: 'techfusion/techfusionapi'
   containerRegistry: 'techfusionregistry.azurecr.io'
   dockerfilePath: '**/dockerfile'
-  tag: 'V1'
+  tag: '$(Build.BuildNumber)'
   # imagePullSecret: 'techfusionregistry25387c4d-auth'
 
   # Agent VM image name
