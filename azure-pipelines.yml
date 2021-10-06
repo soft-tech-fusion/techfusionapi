@@ -11,7 +11,7 @@ variables:
   dockerRegistryServiceConnection: 'b5082020-d9c6-44dc-a421-4102193bdf8c' 
   imageRepository: 'techfusion/techfusionapi'
   containerRegistry: 'techfusionregistry.azurecr.io'
-  dockerfilePath: '.pipeline/Dockerfile'
+  dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildNumber)'
 
   # Agent VM image name
