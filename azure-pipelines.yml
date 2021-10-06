@@ -12,7 +12,6 @@ variables:
   imageRepository: 'techfusion/techfusionapi'
   containerRegistry: 'techfusionregistry.azurecr.io'
   dockerfilePath: '.pipeline/Dockerfile' 
-  # '**/Dockerfile'
   tag: '$(Build.BuildNumber)'
 
   # Agent VM image name
