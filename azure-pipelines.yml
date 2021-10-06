@@ -12,7 +12,7 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'e60365ad-d62b-492d-afdc-44fba574bcc6'
-  imageRepository: 'softtechfusiontechfusionapi'
+  imageRepository: 'techfusionapi/techfusionapi'
   containerRegistry: 'techfusionregistry.azurecr.io'
   dockerfilePath: '**/dockerfile'
   tag: '$(Build.BuildId)'
