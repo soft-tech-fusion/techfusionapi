@@ -75,8 +75,8 @@ stages:
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
-              imagePullSecrets: |
-                $(imagePullSecret)
+              # imagePullSecrets: |
+               # $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
@@ -100,13 +100,13 @@ stages:
               useConfigurationFile: true
               inline: '{ "kind": "Namespace", "apiVersion": "v1", "metadata": { "name": "$(k8sNamespaceForPR)" }}'
 
-          - task: KubernetesManifest@0
-            displayName: Create imagePullSecret
-            inputs:
-              action: createSecret
-              secretName: $(imagePullSecret)
-              namespace: $(k8sNamespaceForPR)
-              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+          #- task: KubernetesManifest@0
+          #  displayName: Create imagePullSecret
+           # inputs:
+            #  action: createSecret
+            #  secretName: $(imagePullSecret)
+            #  namespace: $(k8sNamespaceForPR)
+            #  dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
 
           - task: KubernetesManifest@0
             displayName: Deploy to the new namespace in the Kubernetes cluster
@@ -116,8 +116,8 @@ stages:
               manifests: |
                 $(Pipeline.Workspace)/manifests/deployment.yml
                 $(Pipeline.Workspace)/manifests/service.yml
-              imagePullSecrets: |
-                $(imagePullSecret)
+             # imagePullSecrets: |
+              #  $(imagePullSecret)
               containers: |
                 $(containerRegistry)/$(imageRepository):$(tag)
 
