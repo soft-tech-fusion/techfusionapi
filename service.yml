@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: techfusionapi-service
+spec:
+  selector:
+    app: techfusionapi-pod
+  ports:
+  - port: 3002
+    targetPort: 8080
+  type: LoadBalancer

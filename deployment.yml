@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: techfusionapi-deployment  
+spec:
+  selector:
+    matchLabels:
+      app: techfusionapi-pod
+  template:
+    metadata:
+      labels:
+        app: techfusionapi-pod
+    spec:
+      containers:
+      - name:  techfusionapicontainer
+        image: techfusionregistry.azurecr.io/techfusion/techfusionapi:V1
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
