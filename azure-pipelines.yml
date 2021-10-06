@@ -9,9 +9,9 @@ variables:
 
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: 'b5082020-d9c6-44dc-a421-4102193bdf8c' 
-  imageRepository: 'soft-tech-fusion'
+  imageRepository: 'soft-tech-fusion/techfusionapi'
   containerRegistry: 'techfusionregistry.azurecr.io'
-  dockerfilePath: '**/Dockerfile'
+  dockerfilePath: '**\Dockerfile'
   tag: '$(Build.BuildNumber)'
 
   # Agent VM image name
