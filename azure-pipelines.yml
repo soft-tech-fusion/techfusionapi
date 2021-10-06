@@ -8,7 +8,7 @@ trigger:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: '9ab9035c-ef75-4b0b-90e3-ee000bf41cb4'
+  dockerRegistryServiceConnection: 'b5082020-d9c6-44dc-a421-4102193bdf8c' 
   imageRepository: 'techfusion/techfusionapi'
   containerRegistry: 'techfusionregistry.azurecr.io'
   dockerfilePath: '.pipeline/Dockerfile'
