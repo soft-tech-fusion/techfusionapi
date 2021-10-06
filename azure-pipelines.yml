@@ -16,7 +16,7 @@ variables:
   containerRegistry: 'techfusionregistry.azurecr.io'
   dockerfilePath: '**/dockerfile'
   tag: 'V1'
-  imagePullSecret: 'techfusionregistry25387c4d-auth'
+  # imagePullSecret: 'techfusionregistry25387c4d-auth'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
@@ -61,12 +61,12 @@ stages:
       runOnce:
         deploy:
           steps:
-          - task: KubernetesManifest@0
-            displayName: Create imagePullSecret
-            inputs:
-              action: createSecret
-              secretName: $(imagePullSecret)
-              dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
+          # - task: KubernetesManifest@0
+           # displayName: Create imagePullSecret
+           # inputs:
+            #  action: createSecret
+             # secretName: $(imagePullSecret)
+              #dockerRegistryEndpoint: $(dockerRegistryServiceConnection)
 
           - task: KubernetesManifest@0
             displayName: Deploy to Kubernetes cluster
