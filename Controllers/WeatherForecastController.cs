@@ -13,7 +13,7 @@ namespace techfusionapi.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "It's VERY hot in Valencia today"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "It's VERY hot in Valencia today."
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
