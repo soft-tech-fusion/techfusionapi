@@ -44,6 +44,7 @@ stages:
       artifact: manifests
 
 - stage: Deploy
+  condition: and(succeeded(), not(startsWith(variables['Build.SourceBranch'], 'refs/pull/')))
   displayName: Deploy stage
   dependsOn: Build
 
